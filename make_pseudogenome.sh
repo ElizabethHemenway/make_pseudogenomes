@@ -1,15 +1,14 @@
 #!/bin/bash
 # 04/08/2024 EAH
 # make pseudogenome using bedtools maskfasta
-# usage: make_pseudogenome.sh syri.out ref_genome ref_name alt_name output_directory scripts_directory 
-# example: make_pseudogenome.sh C24.syri T10 C24 ./TAIR10.fa /lab/solexa_gehring/elizabeth/pseudoG/ /lab/solexa_gehring/elizabeth/scripts/
+# usage: make_pseudogenome.sh syri.out ref_name alt_name ref_genome output_directory scripts_directory 
 
 syri_out="$1" # syri output file (if you hav a snp bed file, change columns=TSV to columns=bed in syri_snps2bed.py line 22)
 ref_name="$2" # name of reference
 alt_name="$3" # name of alt
 reference_genome="$4" # fasta file of reference genome
-outdir="$4" # output directory
-scripts="$5" # must include helper script syri_snps2bed.py
+outdir="$5" # output directory
+scripts="$6" # must include helper script syri_snps2bed.py
 
 name=$ref_name'_'$alt_name
 
