@@ -44,3 +44,11 @@ snps2A.to_csv(output_dir+ref_name+"_"+alt_name+'2A.bed', header=False, index=Fal
 snps2T.to_csv(output_dir+ref_name+"_"+alt_name+'2T.bed', header=False, index=False, sep=tab)
 snps2C.to_csv(output_dir+ref_name+"_"+alt_name+'2C.bed', header=False, index=False, sep=tab)
 snps2G.to_csv(output_dir+ref_name+"_"+alt_name+'2G.bed', header=False, index=False, sep=tab)
+
+# make a useful SNPs bed file for later use (like in assign2allele steps)
+snpsout=pd.DataFrame()
+snpsout['Chr']=snps_bed['Chr']
+snpsout['Start']=snps_bed['Start'].astype(int)-1
+snpsout['End']=snps_bed['End']
+snpsout['SNPs'] = snps_bed[["Ref", "Alt"]].apply(lambda x: '>'.join(x.astype(str).values), axis=1)
+snpsout.to_csv(output_dir+ref_name+"_"+alt_name+'SNPs.bed', header=False, index=False, sep=tab)
