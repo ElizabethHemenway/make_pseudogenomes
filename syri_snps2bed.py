@@ -40,7 +40,7 @@ snps2T=snps_bed[snps_bed['Alt']=='T']
 snps2C=snps_bed[snps_bed['Alt']=='C']
 snps2G=snps_bed[snps_bed['Alt']=='G']
 
-snps2A.to_csv(output_dir+ref_name+alt_name+'2a.bed', header=False, index=False, sep=tab)
-snps2T.to_csv(output_dir+ref_name+alt_name+'2T.bed', header=False, index=False, sep=tab)
-snps2C.to_csv(output_dir+ref_name+alt_name+'2C.bed', header=False, index=False, sep=tab)
-snps2G.to_csv(output_dir+ref_name+alt_name+'2G.bed', header=False, index=False, sep=tab)
+snps2A.to_csv(output_dir+ref_name+"_"+alt_name+'2A.bed', header=False, index=False, sep=tab)
+snps2T.to_csv(output_dir+ref_name+"_"+alt_name+'2T.bed', header=False, index=False, sep=tab)
+snps2C.to_csv(output_dir+ref_name+"_"+alt_name+'2C.bed', header=False, index=False, sep=tab)
+snps2G.to_csv(output_dir+ref_name+"_"+alt_name+'2G.bed', header=False, index=False, sep=tab)
